@@ -10,9 +10,13 @@
             <p>
                 @foreach($article->tags as $tag)
                     @if($loop->last)
-                        <span class="tag">{{$tag->label}}</span>
+                        <a href="{{ route('article.tag', $tag->id) }}" style="text-decoration: none;">
+                            <span class="tag">{{$tag->label}}</span>
+                        </a>
                     @else
-                        <span class="tag">{{$tag->label}} |</span>
+                        <a href="{{ route('article.tag', $tag->id) }}" style="text-decoration: none;">
+                            <span class="tag">{{$tag->label}} |</span>
+                        </a>
                     @endif
                 @endforeach
             </p>
